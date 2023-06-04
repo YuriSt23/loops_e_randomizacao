@@ -10,17 +10,19 @@
 </body>
 </html>
 <script>
-    const numero = Math.random(Math.round(10));
+    const numero = Math.round(Math.random(10));
     const msg = prompt("Em qual número estou pensando?");
     if(msg == numero) {
         alert("Parabéns você acertou! o número é " + numero);
     } else {
-        let tentativas = 2;
+        let contador = 2;
         while(msg !== numero) {
-            alert("Você ainda tem " + tentativas + "tentativas restantes");
-            tentativas = tentativas - 1;
-        } if(tentativas == 0) {
+            const tentativas = prompt("Você ainda tem " + contador + "tentativas restantes");           
+            contador = contador - 1;
+            if(contador == 0) {
             alert("que pena sua tentativas acabaram e o número que estava pensando era " + numero);
+            break
+        }
         }
     }
 </script>
